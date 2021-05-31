@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicTacToe | B!ngoal</title>
+    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="icon" href="img/favicon_casseDeChameau1.ico" />
+</head>
+
+<body>
+
+    <h1>Tic Tac Toe</h1>
+
+    <div class="game-area">
+        <div class="players">
+            <label for="x-player">Player X</label>
+            <input placeholder="enter your name" name="x-player" type="text" class="x-player">
+        </div>
+        <div class="board-area">
+            <div class="board">
+                <div class="board-case" id="1"></div>
+                <div class="board-case" id="2"></div>
+                <div class="board-case" id="3"></div>
+                <div class="board-case" id="4"></div>
+                <div class="board-case" id="5"></div>
+                <div class="board-case" id="6"></div>
+                <div class="board-case" id="7"></div>
+                <div class="board-case" id="8"></div>
+                <div class="board-case" id="9"></div>
+            </div>
+        </div>
+        <div class="players">
+            <label for="o-player">Player O</label>
+            <input placeholder="enter your name" name="o-player" type="text" class="o-player">
+        </div>
+    </div>
+
+    <div class="game-info">
+        <div class="player-turn">
+            <p></p>
+        </div>
+        <div class="score-area">
+            <p>Score:</p>
+            <div class="scores">
+                <span class="x-score">X: 0 Pts</span>
+                <span class="o-score">O: 0 pts</span>
+            </div>
+        </div>
+        <button class="new-game">new players</button>
+    </div>
+
+    <div class="endgame-popup">
+        <p></p>
+        <button class="reset">play again</button>
+    </div>
+
+
+</body>
+<script src="js/scripts.min.js"></script>
+
+</html>

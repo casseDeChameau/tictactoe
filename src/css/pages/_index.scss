@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+:root {
+    --x-color: blue;
+    --o-color: orange;
+}
+
+body {
+    display: flex;
+    flex: 0, 0, auto;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    padding-bottom: 10%;
+    font-family: 'Architects Daughter', cursive;
+    .game-area {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 90%;
+        .players {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column nowrap;
+            input {
+                margin-top: 1rem;
+                text-align: center;
+                border: none;
+                font-size: 1.2rem;
+                text-transform: uppercase;
+                &.x-player {
+                    color: var(--x-color);
+                }
+                &.o-player {
+                    color: var(--o-color);
+                }
+            }
+        }
+        .board-area {
+            width: 50vmin;
+            height: 50vmin;
+            border: 2px solid black;
+            .board {
+                display: grid;
+                height: 100%;
+                width: 100%;
+                grid-template: repeat(3, 1fr)/ repeat(3, 1fr);
+                .board-case {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    border: 1px solid black;
+                    cursor: pointer;
+                    &:after {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        height: 100%;
+                        font-size: 4rem;
+                    }
+                    &.x-case {
+                        // background: url('');
+                        &:after {
+                            content: 'X';
+                            color: var(--x-color);
+                        }
+                    }
+                    &.o-case {
+                        &:after {
+                            content: 'O';
+                            color: var(--o-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .game-info {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column wrap;
+        .score-area {
+            width: calc((100%/5)*3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column wrap;
+            font-size: 1.5rem;
+            p {
+                margin: .3rem auto;
+            }
+            .scores {
+                display: flex;
+                width: 100%;
+                justify-content: space-evenly;
+                .x-score {
+                    color: var(--x-color);
+                }
+                .o-score {
+                    color: var(--o-color);
+                }
+            }
+        }
+        .new-game {
+            padding: .5rem 1rem;
+            margin-top: 1rem;
+            transform: scale(.8);
+        }
+    }
+    .endgame-popup {
+        position: absolute;
+        bottom: 0%;
+        left: 50%;
+        transform: translate(-50%, -10%);
+        width: 60vmin;
+        height: 30vmin;
+        background-color: green;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        color: white;
+        p {
+            font-size: 2rem;
+            margin: 0;
+        }
+        button {
+            cursor: pointer;
+            padding: .5rem;
+        }
+        display: none;
+        &.show {
+            display: flex;
+        }
+    }
+}
