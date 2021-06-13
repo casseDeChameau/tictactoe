@@ -4,59 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TicTacToe | B!ngoal</title>
+    <title>k-in-a-row | B!ngoal</title>
     <link rel="stylesheet" href="css/styles.min.css">
     <link rel="icon" href="img/favicon_casseDeChameau1.ico" />
 </head>
 
 <body>
+    <header class="header">
+        <h1>k-in-a-row</h1>
+    </header>
+    <div class="game">
+        <!-- ? board game -->
+        <div class="game-area">
+            <div class="board-area">
+                <!-- ? game configuration -->
+                <div class="configuration">
+                    <div class="board-config">
+                        <h3>Set the game</h3>
+                        <div class="row">
+                            <div class="config-col">
+                                <label for="rows-number">Rows</label>
+                                <input type="number" name="rows-number" placeholder="3" value="3" min="3" max="9">
+                            </div>
+                            <div class="config-col">
+                                <label for="columns-number">Columns</label>
+                                <input type="number" name="columns-number" placeholder="3" value="3" min="3" max="9">
+                            </div>
+                        </div>
+                        <div class="config-col">
+                            <label for="k-in-a-row">number of K in a row to win</label>
+                            <range-row>
+                                <small class="range-min">3</small>
+                                <input type="range" name="k-in-a-row" min="3" max="3">
+                                <small class="range-max">3</small>
+                            </range-row>
+                            <small class="range-set-value"></small>
+                        </div>
 
-    <h1>Tic Tac Toe</h1>
-
-    <div class="game-area">
-        <div class="players">
-            <label for="x-player">Player X</label>
-            <input placeholder="enter your name" name="x-player" type="text" class="x-player">
-        </div>
-        <div class="board-area">
-            <div class="board">
-                <div class="board-case" id="1"></div>
-                <div class="board-case" id="2"></div>
-                <div class="board-case" id="3"></div>
-                <div class="board-case" id="4"></div>
-                <div class="board-case" id="5"></div>
-                <div class="board-case" id="6"></div>
-                <div class="board-case" id="7"></div>
-                <div class="board-case" id="8"></div>
-                <div class="board-case" id="9"></div>
+                    </div>
+                </div>
+                <div class="board">
+                </div>
             </div>
         </div>
-        <div class="players">
-            <label for="o-player">Player O</label>
-            <input placeholder="enter your name" name="o-player" type="text" class="o-player">
+        <!-- ? game infos -->
+        <div class="game-info">
+            <div class="players">
+                <div class="add-player">
+                    <label for="new-player">Add player</label>
+                    <small class="max-players"></small>
+                    <small class="alert-player">this player is already on the list</small>
+                    <input placeholder="enter new name" name="new-player" type="text" class="new-player">
+                </div>
+                <ul class="players-list">
+                </ul>
+            </div>
+            <div class="player-turn">
+                <p></p>
+            </div>
+            <button class="start-game">Start game</button>
         </div>
-    </div>
-
-    <div class="game-info">
-        <div class="player-turn">
+        <!-- ? end game -->
+        <div class="endgame-popup">
             <p></p>
-        </div>
-        <div class="score-area">
-            <p>Score:</p>
-            <div class="scores">
-                <span class="x-score">X: 0 Pts</span>
-                <span class="o-score">O: 0 pts</span>
+            <div class="endgame-btn">
+                <button class="new-round">new round</button>
+                <button class="new-game">new game</button>
             </div>
         </div>
-        <button class="new-game">new players</button>
     </div>
-
-    <div class="endgame-popup">
-        <p></p>
-        <button class="reset">play again</button>
-    </div>
-
-
 </body>
 <script src="js/scripts.min.js"></script>
 

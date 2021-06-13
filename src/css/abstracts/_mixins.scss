@@ -1,0 +1,29 @@
+@mixin flex($d: row, $w: nowrap, $jc: center, $ai: center) {
+    display: flex;
+    flex-direction: $d;
+    flex-wrap: $w;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+@mixin box($pos: relative, $z: initial, $t: unset, $l: unset, $w: 100%, $h: 100%) {
+    position: $pos;
+    z-index: $z;
+    top: $t;
+    left: $l;
+    width: $w;
+    height: $h;
+}
+
+@mixin innerbox($ta: left, $m: 0, $p: 0) {
+    text-align: $ta;
+    margin: $m;
+    padding: $p;
+}
+
+@mixin show($c: magenta, $w: 1px, $s: dotted, $r: 0%s) {
+    border-color: $c;
+    border-width: $w;
+    border-style: $s;
+    border-radius: $r;
+}
